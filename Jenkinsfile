@@ -32,7 +32,7 @@ pipeline {
         }
           stage('build the image') {
             steps {
-               sh " dcoker build -t mohamedbedier/javaapp:${IMAGE_NAME} ."
+               sh " docker build -t mohamedbedier/javaapp:${IMAGE_NAME} ."
             }
         }
           stage('pushing container to rpeo') {
