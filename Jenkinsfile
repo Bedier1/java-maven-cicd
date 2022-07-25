@@ -51,8 +51,8 @@ pipeline {
             steps {
                  withCredentials( [ usernamePassword(credentialsId: 'git-repo' , passwordVariable: 'PASS' , usernameVariable: 'USER' )] ) {
                         
-                        sh ' config  --global user.email "jenkins@example.com" '
-                        sh ' config  --global user.name "jenkins" '
+                        sh ' git config  --global user.email "jenkins@example.com" '
+                        sh ' git  config  --global user.name "jenkins" '
 			sh ' git status '
 			sh ' git config --list'
                        
