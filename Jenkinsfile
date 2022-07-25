@@ -32,7 +32,7 @@ pipeline {
                sh " dcoker build -t mohamedbedier/javaapp:${IMAGE_NAME} ."
             }
         }
-          stage('Hello') {
+          stage('pushing container to rpeo') {
             steps {
                 
               withCredentials( [ usernamePassword(credentialsId: 'docker-repo' , passwordVariable: 'PASS' , usernameVariable: 'USER' )] ) {
@@ -44,7 +44,7 @@ pipeline {
             }
 
         }
-          stage('Hello') {
+          stage('pushing version editing to github') {
             steps {
                  withCredentials( [ usernamePassword(credentialsId: 'git-repo' , passwordVariable: 'PASS' , usernameVariable: 'USER' )] ) {
                         sh  ' git status '
