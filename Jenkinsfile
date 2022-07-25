@@ -50,15 +50,15 @@ pipeline {
           stage('pushing version editing to github') {
             steps {
                  withCredentials( [ usernamePassword(credentialsId: 'git-repo' , passwordVariable: 'PASS' , usernameVariable: 'USER' )] ) {
-                        sh  ' git status '
-                        sh ' config  --global user.email "jenkins@example.com"'
+                        sh  'git status'
+                        sh ' config  --global user.email "jenkins@example.com" '
                         sh ' config  --global user.name "jenkins" '
 
-                        sh " git remote  set-url  origin https://${USER}:${PASS}@github.com/Bedier1/java-maven-cicd.git"                         
+                        sh " git remote  set-url  origin https://${USER}:${PASS}@github.com/Bedier1/java-maven-cicd.git "                         
                         
                         sh 'git add .'
                         
-                        sh ' git commit -m "ci integration" '
+                        sh ' git commit -m "ci integration"'
                         sh ' git push origin HEAD:master '
                         }
 
