@@ -51,8 +51,8 @@ pipeline {
             steps {
                  withCredentials( [ usernamePassword(credentialsId: 'git-repo' , passwordVariable: 'PASS' , usernameVariable: 'USER' )] ) {
                         sh  ' git status '
-                        sh ' config  --global user.email "jenkins@example.com'
-                        sh ' config  --global user.name "jenkins'
+                        sh ' config  --global user.email "jenkins@example.com"'
+                        sh ' config  --global user.name "jenkins" '
 
                         sh " git remote  set-url  origin https://${USER}:${PASS}@github.com/Bedier1/java-maven-cicd.git"                         
                         
