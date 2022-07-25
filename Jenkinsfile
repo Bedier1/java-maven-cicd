@@ -21,7 +21,7 @@ pipeline {
 
         stage('bulild app in jenkins') {
             steps {
-                sh 'mvn clean  '
+                sh 'mvn clean package  '
                
                 sh 'mvn package'
 
